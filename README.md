@@ -37,7 +37,7 @@ The application integrates with a Ruby on Rails API that provides:
 Create a `.env.local` file with:
 
 ```env
-NEXT_PUBLIC_API_BASE_URL=http://localhost:3000/api
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3001/api
 NEXT_PUBLIC_API_TIMEOUT=10000
 ```
 
