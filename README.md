@@ -1,4 +1,4 @@
-# Todo App - Rails API Integration
+# Todo App - Rails API Integration - Generate this project with Bolt.new
 
 A full-stack Next.js application that integrates with a Ruby on Rails API backend for managing todo tasks.
 
