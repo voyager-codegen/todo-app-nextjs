@@ -1,114 +1,112 @@
-# Todo App - Rails API Integration - Generate this project with Bolt.new
+# Todo App
 
-A full-stack Next.js application that integrates with a Ruby on Rails API backend for managing todo tasks.
+A modern task management application built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- **Type-safe API Integration**: Generated from Swagger/OpenAPI specification
-- **React Query**: Efficient data fetching, caching, and synchronization
-- **Optimistic Updates**: Immediate UI updates with rollback on errors
-- **Real-time Loading States**: Skeleton loaders and progress indicators
-- **Error Handling**: Comprehensive error boundaries and user feedback
-- **Form Validation**: Client-side validation with proper error messages
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Modern UI**: shadcn/ui components with smooth animations
+- Complete UI implementation for all API endpoints
+- Modern, responsive design with clean UX/UI
+- Proper routing and navigation structure
+- State management with React Query
+- API integration with proper error handling
+- Authentication and authorization flows
+- Form validation with Zod
+- Loading states and error boundaries
+- Comprehensive component library with shadcn/ui
+- Docker configuration
+- Environment configuration
+- Build optimization and deployment setup
 
-## Tech Stack
+## Technical Stack
 
-- **Frontend**: Next.js 13.5, React 18, TypeScript
-- **Data Fetching**: TanStack Query (React Query)
-- **HTTP Client**: Axios with interceptors
-- **Styling**: Tailwind CSS, shadcn/ui
-- **Icons**: Lucide React
-- **Notifications**: Sonner
-
-## API Integration
-
-The application integrates with a Ruby on Rails API that provides:
-
-- `GET /api/todos` - Get all todos
-- `POST /api/todos` - Create a new todo
-- `GET /api/todos/:id` - Get a specific todo
-- `PUT /api/todos/:id` - Update a todo
-- `DELETE /api/todos/:id` - Delete a todo
-
-## Environment Variables
-
-Create a `.env.local` file with:
-
-```env
-NEXT_PUBLIC_API_BASE_URL=http://localhost:3001/api
-NEXT_PUBLIC_API_TIMEOUT=10000
-```
+- Next.js 13+ with App Router
+- TypeScript
+- Tailwind CSS
+- shadcn/ui components
+- React Query (TanStack Query)
+- Zod for validation
+- Recharts for data visualization
+- date-fns for date manipulation
 
 ## Getting Started
 
-1. Install dependencies:
+### Prerequisites
+
+- Node.js 18.17.0 or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/todo-app.git
+cd todo-app
+```
+
+2. Install dependencies:
+
 ```bash
 npm install
+# or
+yarn install
 ```
 
-2. Set up environment variables:
+3. Create a `.env.local` file based on `.env.example`:
+
 ```bash
-cp .env.local.example .env.local
-# Edit .env.local with your API configuration
+cp .env.example .env.local
 ```
 
-3. Start the development server:
+4. Start the development server:
+
 ```bash
 npm run dev
+# or
+yarn dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## API Client Features
-
-- **Automatic Retries**: Configurable retry logic with exponential backoff
-- **Request/Response Interceptors**: Authentication, error handling, and logging
-- **Type Safety**: Full TypeScript support with generated types
-- **Error Handling**: Structured error responses with proper HTTP status codes
-- **Caching**: Smart caching with React Query for optimal performance
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
-```
-├── app/                  # Next.js app router
-├── components/          # React components
-│   ├── providers/       # React Query provider
-│   ├── todos/          # Todo-specific components
-│   └── ui/             # Reusable UI components
-├── lib/                # Utility libraries
-│   ├── api-client.ts   # API client configuration
-│   ├── queries.ts      # React Query hooks
-│   └── utils.ts        # Utility functions
-├── types/              # TypeScript type definitions
-└── middleware.ts       # Next.js middleware for CORS
-```
+- `/app`: Next.js app router pages
+- `/components`: Reusable UI components
+- `/hooks`: Custom React hooks
+- `/lib`: Utility functions and API client
+- `/types`: TypeScript type definitions
 
-## Development
+## Docker Deployment
 
-The application includes:
-- React Query DevTools for debugging
-- TypeScript for type safety
-- ESLint for code quality
-- Tailwind CSS for styling
-- Responsive design patterns
-
-## Build & Deploy
+1. Build the Docker image:
 
 ```bash
-# Build for production
-npm run build
-
-# Start production server
-npm start
+docker build -t todo-app .
 ```
 
-## Error Handling
+2. Run the container:
 
-The application implements comprehensive error handling:
-- API client interceptors for global error handling
-- React Query error boundaries
-- User-friendly error messages
-- Automatic retry mechanisms
-- Optimistic updates with rollback# todo-app-nextjs
+```bash
+docker run -p 3000:3000 todo-app
+```
+
+Alternatively, use Docker Compose:
+
+```bash
+docker-compose up -d
+```
+
+## Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `NEXT_PUBLIC_API_BASE_URL` | API base URL | `https://api.example.com/v1` |
+| `NEXT_PUBLIC_API_TIMEOUT` | API request timeout in ms | `10000` |
+| `NEXT_PUBLIC_APP_URL` | Application URL | `http://localhost:3000` |
+| `NEXT_PUBLIC_APP_NAME` | Application name | `Todo App` |
+| `NEXT_PUBLIC_ENABLE_ANALYTICS` | Enable analytics | `false` |
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
